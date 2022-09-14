@@ -1,0 +1,209 @@
+.addTask {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.addTask > input {
+  height: 35px;
+  padding: 0px 3px;
+  width: 90%;
+}
+
+.addTask > a {
+  cursor: pointer;
+  background-color: lightblue;
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 20px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+.addTask > a:hover {
+  background-color: blue;
+  color: white;
+}
+
+.taskBoxContainer {
+  display: flex;
+  height: 100%;
+  max-height: 530px;
+  background: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.taskItemContainer {
+  display: flex;
+  flex-direction: column;
+  height: 105%;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-height: 490px;
+  overflow-y: scroll;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.taskItem {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.taskItem > div {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left; 
+  flex: 1
+}
+
+.taskItemPlay {
+  font-size: 25px;
+  color: green;
+}
+
+.taskItemPlay:hover {
+  cursor: pointer;
+  color: greenyellow;
+}
+
+.taskItemDelete {
+  font-size: 25px;
+  color: black;
+}
+
+.taskItemDelete:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.taskItem:not(:first-child) {
+  margin-top: 25px;
+}
+
+.taskCheckBox {
+  width: 18px;
+  height: 18px;
+}
+
+
+
+
+
+.taskNotActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskNotActive strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.taskNotActive p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4;
+  max-width: 70%;
+  margin-top: 3rem;
+}
+
+.taskNotActiveImages img:first-child {
+  opacity: 0.2;
+  margin-right: -30px;
+}
+
+.taskNotActiveImages img:last-child {
+  opacity: 0.2;
+  margin-left: -30px;
+}
+
+.taskNotActive p img {
+  margin-bottom: 1rem;
+}
+
+.taskActive {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.taskActive header {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding: 0 2rem 1.5rem;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.taskActive main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskActive main strong {
+  font-size: 2rem;
+  font-size: 600;
+  color: var(--title);
+  margin: 1.5rem 0 1rem;
+}
+
+.taskActive main p {
+  line-height: 1.5;
+}
+
+.taskActive footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.taskActive footer button {
+  height: 3rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 5px;
+
+  color: var(--white);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: filter 0.2s;
+}
+
+.taskActive footer button.taskFailedButton {
+  background: var(--red);
+}
+
+.taskActive footer button.taskSucceededButton {
+  background: var(--green);
+}
+
+.taskActive footer button:hover {
+  filter: brightness(0.9);
+}
