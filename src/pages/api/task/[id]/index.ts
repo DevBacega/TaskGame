@@ -4,7 +4,9 @@ import Task from '../../../../../tasks.json'
 import fs from "fs"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<ITask[] | ITask>) {
-  console.log(req.method)
+
+  const absolutePath = process.cwd()
+
 
   if(req.method === 'GET')  {
     const query = req.query
@@ -17,7 +19,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<ITask[
     const query = req.query
     const { id } = query
     const newTaskList = Task.filter(task => task.id !== Number(id))
-    fs.writeFileSync('tasks.json', JSON.stringify(newTaskList))
+    fs.writeFileSync(absolutePath + '/tasks.json', JSON.stringify(newTaskList))
     return res.status(200).json(newTaskList)
   }
 }
