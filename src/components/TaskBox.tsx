@@ -15,6 +15,7 @@ export function TaskBox() {
   const ref = useRef<HTMLInputElement>();
 
   async function getTaskList() {
+    console.log('TESTE', API)
     const data = await fetch(`${API}/task`).then((res) => res.json());
     setTaskList(data);
   }
